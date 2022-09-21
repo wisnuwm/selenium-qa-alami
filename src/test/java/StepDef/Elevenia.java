@@ -73,7 +73,7 @@ public class Elevenia {
 
     @And("Select {string} and {string}")
     public void selectAnd(String hapus, String ok) {
-        driver.navigate().refresh();
+        driver.switchTo().defaultContent();
         driver.findElement(By.xpath("//a[contains(text(),'"+hapus+"')]")).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(By.xpath("//a[@id='chkDelPopY']")).click();
